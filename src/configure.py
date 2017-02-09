@@ -40,12 +40,9 @@ makefile = pyqtconfig.QtGuiModuleMakefile(
 # Add the library we are wrapping.  The name doesn't include any platform
 # specific prefixes or extensions (e.g. the "lib" prefix on UNIX, or the
 # ".dll" extension on Windows).
-makefile.extra_lib_dirs = ["/home/kane/projects/malayalam/tree/lib"]
-makefile.extra_libs = ["poppler-qt4"]
-makefile.extra_include_dirs = ['/home/kane/projects/malayalam/tree/include/poppler', '/usr/qt/4/include/QtXml'] #["/usr/include/poppler", "/usr/qt/4/include", "/usr/qt/4/include/QtXml/"]
-
-#makefile.extra_include_dirs = ["/usr/include/poppler", "/usr/qt/4/include", "/usr/qt/4/include/QtXml/"] #RJS: for some reason, we get an error including dom.h .. so including QtXml include here
-
+makefile.extra_lib_dirs = ['',]
+makefile.extra_libs = ['poppler-qt4',]
+makefile.extra_include_dirs = ['/usr/include/poppler', '/usr/qt/4/include/QtXml', '/usr/include/Qt']
 
 # Generate the Makefile itself.
 makefile.generate()
@@ -68,3 +65,4 @@ content = {
 # This creates the helloconfig.py module from the helloconfig.py.in
 # template and the dictionary.
 sipconfig.create_config_module("pypopplerqt4config.py", "pypopplerqt4config.py.in", content)
+
